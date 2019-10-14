@@ -134,7 +134,7 @@ max_decimal_places: 2 # optional
 
 ```yaml
 name: "perform_regex"
-regex: "PC-(\d*)"
+regex: "PC-(\\d*)"
 group: 1 #optional (default 0)
 ```
 
