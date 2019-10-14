@@ -1,0 +1,47 @@
+columns:
+  - name: "ProductId"
+    commands:
+      - name: "read"
+        column_name: "Product"
+      - name: "perform_regex"
+        regex: "(\\d.*) - (.*)"
+        group: 1
+  - name: "ProductName"
+    commands:
+      - name: "read"
+        column_name: "Product"
+      - name: "perform_regex"
+        regex: "(\\d.*) - (.*)"
+        group: 2
+  - name: "Currency"
+    commands:
+      - name: "read"
+        column_name: "Price"
+      - name: "perform_regex"
+        regex: "(.)([\\d,.]*)"
+        group: 1
+  - name: "Price"
+    commands:
+      - name: "read"
+        column_name: "Price"
+      - name: "perform_regex"
+        regex: "(.)([\\d,.]*)"
+        group: 2
+      - name: "parse_number"
+        input_country: "de"
+        input_lang: "DE"
+        output_country: "en"
+        output_lang: "GB"
+        is_grouping_used: false
+        min_decimal_places: 2
+  - name: "Sold"
+    commands:
+      - name: "read"
+        column_name: "Amount Sold"
+      - name: "parse_number"
+        input_country: "de"
+        input_lang: "DE"
+        output_country: "en"
+        output_lang: "GB"
+        is_grouping_used: false
+        max_decimal_places: 0

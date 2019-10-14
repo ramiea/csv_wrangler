@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.gocrisp.assignment"},{"l":"com.gocrisp.assignment.commands"}]

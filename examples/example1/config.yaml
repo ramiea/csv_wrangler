@@ -1,0 +1,43 @@
+columns:
+  - name: "OrderID"
+    commands:
+      - name: "read"
+        column_name: "Order Number"
+  - name: "OrderDate"
+    commands:
+      - name: "read"
+        column_name: "Year"
+      - name: "value"
+        value: "-"
+      - name: "read"
+        column_name: "Month"
+      - name: "value"
+        value: "-"
+      - name: "read"
+        column_name: "Day"
+      - name: "parse_date"
+        input_format: "yyyy-mm-dd"
+        output_format: "dd-mm-yyyy"
+  - name: "ProductId"
+    commands:
+      - name: "read"
+        column_name: "Product Number"
+  - name: "ProductName"
+    commands:
+      - name: "read"
+        column_name: "Product Name"
+  - name: "Quantity"
+    commands:
+      - name: "read"
+        column_name: "Count"
+      - name: "parse_number"
+        input_country: "en"
+        input_lang: "GB"
+        output_country: "de"
+        output_lang: "DE"
+        is_grouping_used: true
+        min_decimal_places: 2
+  - name: "Unit"
+    commands:
+      - name: "value"
+        value: "kg"
